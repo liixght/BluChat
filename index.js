@@ -3,11 +3,16 @@ const chatBox = document.querySelector(".chat-message");
 const chatContent = document.querySelector(".chat-content");
 const input = document.querySelector("#input");
 
+window.addEventListener("DOMContentLoaded", function() {
+    input.focus();
+    input.value = "";
+});
+
 send.addEventListener("click", function() {
     const div = document.createElement('div');
     const p = document.createElement("p");
     const i = document.createElement("span");
-    if (input.value !== "") {
+    if (input.value !== "" && input.value !== " ") {
         div.style.display = "flex";
         div.style.justifyContent = "end";
         p.classList.add("message");
